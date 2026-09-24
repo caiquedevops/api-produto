@@ -51,19 +51,19 @@ Fazer com que a aplicação "api-produto" acesse o banco de dados em mongoDB par
 ## 📚 Resultado
 
 
-![[Pasted image 20260924172224.png|496]]
+<img src="./imagens/1.png" width="700">
 
 **Conexão com o MongoDB pelo Mongo Compass efetuado com sucesso!**
 
-![[Pasted image 20260924172306.png|485]]
+<img src="./imagens/2.png" width="700">
 
 **Envio de cadastro de produtos realizado com sucesso!**
 **Obs:** Confirmação pela descrição "200 - OK"
 
-![[Pasted image 20260924172427.png|442]]
+<img src="./imagens/3.png" width="700">
 
 **Banco de dados armazenando os cadastros com sucesso!**
 
-![[Pasted image 20260924172524.png|480]]
+<img src="./imagens/4.png" width="700">
 
 **Consulta dos produtos armazenados no Banco de dados pela API-PRODUTO!**
