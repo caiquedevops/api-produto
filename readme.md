@@ -1,14 +1,12 @@
 # 🐳 API-CADASTRO DE PRODUTOS NO MONGODB
 
-Projeto desenvolvido para praticar **Integração entre Banco de dados e Aplicação Node.js** em containers diferentes.
+Projeto desenvolvido para praticar **Integração entre Banco de dados e Aplicação Node.js** em containers diferentes utilizando o DOCKER COMPOSE.
 
 ## 🎯 Objetivo
 
-Construir dois containers distintos:
+Construir dois containers distintos com *Docker Compose*:
 - Container com banco de dados "mongoDB" armazenando os dados em docker volume.
 - Container com Node.js sendo criado pelo dockerfile com alguns parâmetros para iniciar aplicação.
-
-Usar dockerfile para criação de uma das imagens.
 
 Download da aplicação "api-produto" do repositório "https://github.com/KubeDev/api-produto".
 
@@ -19,20 +17,25 @@ Fazer com que a aplicação "api-produto" acesse o banco de dados em mongoDB par
 - Node.js
 - Docker
 - Dockerfile
+- Docker Compose
 - MongoDB
 - MongoDB Compass
 - api-produto
+- Git
+- Git Hub
 
 ## 📌 O que foi praticado
 
-- Criação de docker volume nomeado de "banco_vl"
-- Criação de uma network bridge nomeada de "testando_bridge"
-- Download da aplicação "api-produto"
+Toda a construção da imagem e container foram efetuados pelo docker compose!
 
-**Imagem MongoDB**
+- Criação de docker volume nomeado de "banco_vl"
+- Criação de uma network bridge nomeada de "api_bridge"
+- Download da aplicação "api-produto" via git
+
+**Service (Imagem e Container) MongoDB**
 - Criação do container Docker para aplicação usando a versão mongo:8.3.11
 - Nomeando conteiner como "mongo-db"
-- Conectando a network "testando_brige"
+- Conectando a network "api_brige"
 - Montando o volume "banco_vl" na pasta padrão da base de dados "/dados/db"
 - Publicando a porta 27017 para testar o funcionanmento na máquina host
 - Informando parâmetros de User e Password na criação do Build
@@ -40,16 +43,19 @@ Fazer com que a aplicação "api-produto" acesse o banco de dados em mongoDB par
 
 
 **API-PRODUTOS**
-- Criação de dockerfile para construção da imagem informando alguns parâmetros
+- Criação de dockerfile para construção da imagem informando alguns parâmetros para iniciar aplicação
 - Criação de .dockerignore para não copiar arquivos/diretórios desnecessários
 - Criação da imagem caiquedevops/api-produto:latest
-- Construção do container api-produtos-node para rodar aplicação
+- Construção do container api-produto para rodar aplicação
 - Publicação da porta 8080:8080 para acessar aplicação web
 - Definição da variável para acessar o banco de dado -> MONGODB_URI=mongodb://mongouser:mongopwd@mongo-db:27017/admin
 
 
 ## 📚 Resultado
 
+<img src="./imagens/5.png" width="700">
+<img src="./imagens/6.png" width="700">
+**Imagem e Containers criados com sucesso! **
 
 <img src="./imagens/1.png" width="700">
 

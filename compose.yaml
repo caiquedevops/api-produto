@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: dockerfile
   # Nome da imagem
-    image: api-produto:v1
+    image: caiquedevops/api-produto:latest
   # Port Bind
     ports:
     - 8080:8080
