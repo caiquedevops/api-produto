@@ -1,6 +1,6 @@
 # 🐳 API-CADASTRO DE PRODUTOS NO MONGODB
 
-Projeto desenvolvido para praticar **Integração entre Banco de dados e Aplicação Node.js" em containers diferentes.
+Projeto desenvolvido para praticar **Integração entre Banco de dados e Aplicação Node.js** em containers diferentes.
 
 ## 🎯 Objetivo
 
