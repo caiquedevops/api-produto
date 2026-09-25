@@ -1,0 +1,47 @@
+# Criação do volume para armazenar os dados do MongoDB
+volumes:
+  banco_vl:
+
+#Criação da network bridge para conectar a API com o MongoDB
+networks:
+  api_bridge:
+
+services:
+# Criando container da API
+  api-produto:
+  # Construir imagem da API com base no dockerfile
+    build:
+      context: .
+      dockerfile: dockerfile
+  # Nome da imagem
+    image: api-produto:v1
+  # Port Bind
+    ports:
+    - 8080:8080
+  # Informando as variáveis
+    environment:
+      MONGODB_URI: mongodb://mongouser:mongopwd@mongo-db:27017/admin
+  # Vinculando a network bridge para comunicação dos containers
+    networks:
+      - api_bridge
+  # Informar para iniciar primeiro o container abaixo:
+    depends_on:
+      - mongo-db
+
+# Criando container do banco de dados pegando a imagem padrão do mongo
+  mongo-db:
+  # Informando a imagem base que será utilizada
+    image: mongo:8.3.11
+  # Port Bind
+    ports:
+    - 27017:27017
+  # Informando as variáveis
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongouser
+      MONGO_INITDB_ROOT_PASSWORD: mongopwd
+  # Vinculando o banco de dados do mongoDB a um volume
+    volumes:
+      - banco_vl:/data/db
+  # Vinculando a network bridge para comunicação dos containers
+    networks:
+      - api_bridge
